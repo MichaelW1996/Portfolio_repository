@@ -78,6 +78,11 @@ li a {
     border-radius: 50%;
 }
 
+#About_me container{
+    display: block;
+    background-color: antiquewhite;
+    padding: 5px;
+}
 
 container h3{
     display:flex;
@@ -90,6 +95,14 @@ container h3{
     background-image: var(--lingrad);
     align-items: center;
     justify-content: center;
+}
+#Work{
+    display: flex;
+}
+
+#Work h2{
+    width: 20vw;
+    border-right: solid black 1px;
 }
 
 #projects{
@@ -119,7 +132,8 @@ article img{
 }
 
 footer{
-    display:block;
-    position: relative;
-    justify-content: center;
+    display: block;
+    width: 50%;
+    margin:auto;
+    text-align: center;
 }
