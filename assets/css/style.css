@@ -46,6 +46,12 @@ li a {
     color: inherit;
 }
 
+#article1{
+    display: flex;
+    width:80vw;
+    height:60vh;
+}
+
 #Hero_banner{
     display: flex;
     /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
@@ -82,13 +88,9 @@ li a {
     display: block;
     background-color: antiquewhite;
     padding: 5px;
+    margin: 2px
 }
 
-container h3{
-    display:flex;
-    width: 20vw;
-    left: 5px;
-}
 
 #Contact_me{
     display: flex;
@@ -105,11 +107,12 @@ container h3{
     border-right: solid black 1px;
 }
 
-#projects{
+.projects{
     display: flex;
     flex-wrap: wrap;
     width:100%;
 }
+
 article{
     display:flex;
     width:39vw;
@@ -118,17 +121,26 @@ article{
     margin:1vw;
 }
 
-#projects :nth-child(1){
-    width:80vw;
-    height:60vh;
+.card{
+    position: absolute;
+    float: left;
+    background-color: var(--Base);
+    line-height: 0.5;
+    padding: 1%;
+    margin: 1%
 }
 
+.card p{
+    font-size: small;
+}
+
+
+
 article img{
-    position: flex;
-    left: 0;
-    top:0;
-    width:30vw;
-    height:30vh;
+    display: flex;
+    object-fit: cover;
+    width:100%;
+    height:100%;
 }
 
 footer{
