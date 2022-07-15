@@ -5,13 +5,117 @@
 --text: rgb(0, 0, 0);
 --lingrad: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
 }
+*{
+    color: var(--text);
+    border-radius: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+li:hover, article:hover{
+    box-shadow: 0 0 10px var(--Accent);
+    color: var(--Accent);
+}
 
 body{
-    background-image: linear-gradient(to right, rgba(63,63,247,0),rgb(63, 63, 247, 1));
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-image: linear-gradient(to right, rgba(63, 63, 247, 0.41),rgb(63, 63, 247, 1));
 }
 
 
+header h1{
+    background-image: var(--lingrad);
+    font-size: 35px;
+    border-radius: 5px;
+}
+li {
+    display: block;
+    background-color: var(--Base);
+    font-size: 25px;
+    padding:5px;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+
+li a{
+    width: 100%;
+    display: block;
+}
+
+#Hero_banner{
+    display: flex;
+    flex-direction: column;
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(../images/Heroimage.jpg);
+    height: 50vh;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    align-items: center;
+}
+
+h2{
+    background-color: var(--Base);
+    padding: 0.5vh;
+    border-radius: 10px;
+    margin: 2vh;
+}
+
+#Hero_banner img{
+    height: 40vh;
+    border-radius: 50%;
+}
+
+
+#About_me container{
+    display: block;
+    background-color: antiquewhite;
+    padding: 10px;
+    margin: 10px;
+    font-size: 150%;
+}
+#About_me p{
+    text-align:unset;
+}
+
+p a::after{
+    content:"🔗";
+    text-decoration: none;
+}
+
+article{
+    display:flex;
+    height:60vh;
+    margin:1vw;
+    justify-content: center;
+    align-items: end;
+}
+article img{
+    object-fit: cover;
+    width:100%;
+    height:100%;
+}
+
+.card{
+    position: absolute;
+    background-color: var(--Base);
+    line-height: 0.5;
+    padding: 0.5%;
+    margin: 1%;
+    display: block;
+    border: solid 2px var(--AccentL);
+    font-size: 125%;
+}
+.card p{
+    font-size: 75%;
+}
+
+
+/*
+#Hero_banner img{
+    align-self: center;
+    right:auto;
+}
+
+/*
 header{
     background-image: var(--lingrad);
     display: flex;
@@ -26,7 +130,7 @@ header h1{
 header ul{
     position:absolute;
     right:15px;
-    align-items: center
+    align-items: center;
 }
 
 li {
@@ -54,14 +158,14 @@ li a {
 
 #Hero_banner{
     display: flex;
-    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    
     background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(../images/Heroimage.jpg);
   
-    /* Set a specific height */
+    
     height: 50vh;
     width: 100%;
   
-    /* Position and center the image to scale nicely on all screens */
+    
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -84,12 +188,7 @@ li a {
     border-radius: 50%;
 }
 
-#About_me container{
-    display: block;
-    background-color: antiquewhite;
-    padding: 5px;
-    margin: 2px
-}
+
 
 
 #Contact_me{
@@ -143,9 +242,8 @@ article img{
     height:100%;
 }
 
-footer{
-    display: block;
-    width: 50%;
-    margin:auto;
-    text-align: center;
-}
+
+*/
+
+
+
