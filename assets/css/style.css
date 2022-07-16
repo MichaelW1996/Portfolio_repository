@@ -1,32 +1,38 @@
-:root {
---Accent: rgb(255, 11, 11);
---AccentL: rgb(230, 112, 180);
---Base: rgb(255, 255, 255);
---text: rgb(0, 0, 0);
---lingrad: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+:root { /* Variable colours*/
+--Accent: rgb(255, 11, 11); /*Accent colour - Shadows on boxes, used for header gradient*/
+--Base: rgb(255, 255, 255); /*Used as a readable background for text*/
+--text: rgb(0, 0, 0); /*Text colour*/
+--lingrad: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); /*Header linear gradient*/
 }
+
+/*Universal features, text colour, rounded corners and font for whole document*/
 *{
     color: var(--text);
     border-radius: 5px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+
+/*Please note, Styled Mobile first*/
+/*Hover effect text & shaddow round boxes in accent colour*/
 li:hover, article:hover{
     box-shadow: 0 0 10px var(--Accent);
     color: var(--Accent);
 }
 
+/*Background gradient*/
 body{
     background-image: linear-gradient(to right, rgba(63, 63, 247, 0.41),rgb(63, 63, 247, 1));
 }
 
-
+/*Header styling*/
 header h1{
     background-image: var(--lingrad);
     font-size: 35px;
-    border-radius: 5px;
 }
-li {
-    display: block;
+/*Nav bar styling*/
+li{
+    display: block; /*to take up entire width on mobile*/
     background-color: var(--Base);
     font-size: 25px;
     padding:5px;
@@ -34,82 +40,169 @@ li {
     font-weight: bolder;
 }
 
-li a{
-    width: 100%;
-    display: block;
-}
-
+/* Hero image, Profile picture*/
 #Hero_banner{
     display: flex;
     flex-direction: column;
     background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(../images/Heroimage.jpg);
-    height: 50vh;
-    width: 100%;
+    height: 55vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
     align-items: center;
 }
 
-h2{
+/*Job title & Section headings*/
+h2{ 
     background-color: var(--Base);
-    padding: 0.5vh;
+    padding: 1vh;
     border-radius: 10px;
     margin: 2vh;
 }
 
+/*Profile picture*/
 #Hero_banner img{
     height: 40vh;
-    border-radius: 50%;
+    border-radius: 50%; /*Turns image to circle*/
+    margin: 5px;
 }
 
-
+/*About me section*/
 #About_me container{
-    display: block;
+    display: block; /*Styling for About me paragraph*/
     background-color: antiquewhite;
     padding: 10px;
     margin: 10px;
     font-size: 150%;
 }
+
 #About_me p{
-    text-align:unset;
+    text-align:unset; /*Removes default center align*/
 }
 
-p a::after{
+p a::after{ /*Adds link Emoji after links in about me*/
     content:"🔗";
-    text-decoration: none;
 }
 
+
+/*Projects*/
 article{
     display:flex;
     height:60vh;
+    flex-basis: 100%; /*Default 100% width for project to take up width of site*/
     margin:1vw;
     justify-content: center;
     align-items: end;
 }
-article img{
+article img{ /*Image for each project*/
     object-fit: cover;
     width:100%;
     height:100%;
 }
 
-.card{
+.card{ /*text styling for projects*/
     position: absolute;
     background-color: var(--Base);
     line-height: 0.5;
     padding: 0.5%;
     margin: 1%;
-    display: block;
-    border: solid 2px var(--AccentL);
     font-size: 125%;
 }
+/*subheadding text reduced size in project cards*/
 .card p{
     font-size: 75%;
 }
 
+/*Media Query for Tablets*/
+@media screen and (Min-width:768px) {
+    /*Changes to Banner styling*/
+    #Hero_banner{
+        flex-direction: row ; /*Puts Picture and Job title next to eachother in Hero Banner*/
+        justify-content: space-between; /*Puts Job title and picture at opposite sides of banner*/
+        font-size: 150%; /*increased text size for readability*/
+    }
+    /*Changes to Project styling*/
+    article{
+        align-items: flex-start; /*Moves cards to top of images*/
+        font-size: 110%; /*text size for reability*/
+    }
+    /*Nav bar top changed to be in a row*/
+    header ul{
+        display: flex;
+        flex-direction: row;
+        justify-content:center;
+    }
+}
 
-/*
+/*Desktop changes*/
+@media screen and (Min-width:992px) {
+    /*Header changes to allow Name to be beside Nav items*/
+    header{
+        display:flex; 
+        justify-content: space-between; /*Position nav items and name at opposite sides*/
+        background-image: var(--lingrad);       
+    }
+    header h1{
+        background-image: none;
+    }
+    #Hero_banner h2{
+        align-self: flex-end;
+    }
+    ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+   #Work div{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+    }
+    .projects article{
+        align-items: flex-start;
+        justify-content: space-between;
+        font-size: 100%;
+        flex-shrink: 0.5;
+        flex-wrap: wrap;
+        flex-basis: 47%
+    }
+    article:nth-of-type(1){
+        flex-basis: 98%
+    }
+    #About_me{
+        display: flex;
+    }
+    #About_me h2{
+        display: flex;
+        width:20vw;
+        height: fit-content;
+        border-right: solid black 1px;
+    }
+
+    #Work{
+        display: flex;
+    }
+    
+    #Work h2{
+        display: flex;
+        width: 20vw;
+        height:fit-content;
+        border-right: solid black 1px;
+    }
+    #Contact_me ul{
+        border-top: solid black 1px;
+        border-radius: 0;
+        margin-top: 10px;
+    }
+    .projects{
+        border-left: solid black 1px;
+        border-radius: 0;
+    }
+}
+
+/* old code
 #Hero_banner img{
     align-self: center;
     right:auto;
