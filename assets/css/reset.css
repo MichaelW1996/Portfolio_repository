@@ -1,8 +1,11 @@
+/*Reset of properties prior to styling being used*/
+
 ul{
     margin:0;
     padding:0;
 }
 
+/*Removes special styling from links, ie removal of underline and blue*/
 a:link { 
     text-decoration: none; 
     color: inherit; 
@@ -23,6 +26,7 @@ a:active {
     color: inherit;
 }
 
+/*Resets Text to have margin and be center aligned*/
 h1, h2, h3, h4, p, li{
     margin: 10px;
     text-align: center;

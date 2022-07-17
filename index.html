@@ -17,6 +17,7 @@
 
         <nav>
             <ul>
+                <!--Nav bar links to sections on page-->
                 <li><a href="#About_me">About me</a></li>
                 <li><a href="#Work">Work</a></li>
                 <li><a href="#Contact_me">Contact me</a></li>
@@ -38,52 +39,63 @@
             <h2>
                 About me
             </h2>
+            <!--div to enable right border in desktop view -->
+            <div class="RightBorder">
+                <!--div to enable gap between border and content-->
+                <div>
+                    <!--About me, with links for clarification on projects-->
+                    <p>
+                        My name is Michael, I'm a Utility Surveyor based across the UK, Getting started in the world of Coding &
+                        Web design, I studied Electrical & Electronic engineering, and participated in robotics competitions in
+                        my youth.
+                        Over the last 7 years I've been lucky enough to direct a small team of utility surveyors on large
+                        infrastructure projects such as <a href="https://www.hs2.org.uk/">HS2</a>, <a
+                            href="https://nationalhighways.co.uk/our-roads/lower-thames-crossing/what-is-the-lower-thames-crossing/">Lower
+                            Thames Crossing</a>, <a href="https://thetrupgrade.co.uk/">Transpennine Route Upgrade</a> & various
+                        councils across England.
+                    </p>
 
-            <container>
-                <p>
-                    My name is Michael, I'm a Utility Surveyor based across the UK, Getting started in the world of Coding &
-                    Web design, I studied Electrical & Electronic engineering, and particiapted in robotics competitions in
-                    my youth.
-                    Over the last 7 years I've been lucky enough to direct a small team of utility surveyors on large
-                    infrastructure projects such as <a href="https://www.hs2.org.uk/">HS2</a>, <a
-                        href="https://nationalhighways.co.uk/our-roads/lower-thames-crossing/what-is-the-lower-thames-crossing/">Lower
-                        Thames Crossing</a>, <a href="https://thetrupgrade.co.uk/">Transpennine Route Upgrade</a> & various
-                    councils across England.
-                </p>
-
-                <p>
-                    Through my career I have developed project management skills applicable in various environements. I
-                    pride myself on being self motivated and being able to problem solve in the feild with minimal
-                    disruption.
-                    I have a strong focus on the quality of work produced, im aware that my work carries my name and feel I
-                    should be proud of all of it, regardless of the project being worth £600 or £600,000.
-                </p>
-            </container>
+                    <p>
+                        Through my career I have developed project management skills applicable in various environements. I
+                        pride myself on being self motivated and being able to problem solve in the feild with minimal
+                        disruption.
+                        I have a strong focus on the quality of work produced, im aware that my work carries my name and feel I
+                        should be proud of all of it, regardless of the project being worth £600 or £600,000.
+                    </p>
+                </div>
+            </div>  
         </container>
 
-        <!--Work-->
+        <!--Work id functions as location for nav bar-->
         <container id="Work">
             <h2>
                 Work
             </h2>
-            <div class="projects">
-                <!--Project 1-->
-                <article id="article1">
-                    <img src="./assets/images/PAS128.jpg" alt="GPR being deployed as part of a PAS128 survey">
+            <!--Div for right border-->
+            <div class="RightBorder">
+                <!--Project 1 demo of notes, similar for next 5 projects-->
+                <!--Each project starts with a link-->
+                <a href="https://www.bsigroup.com/en-GB/standards/pas-1282022/" target="_blank" rel="noopener noreferrer">
+                <article> 
+                    
+                    <!--card is used to hold text info. seperate class is used as this is moved depending on width-->
                     <container class="card">
                         <h3>
-                            PAS128D GPR Utility Surveys
+                            PAS128 GPR Utility Surveys
                         </h3>
                         <p>
                             Uncovering the network of pipes and cables
                         </p>
                     </container>
-                    
+                    <img src="./assets/images/PAS128.jpg" alt="GPR being deployed as part of a PAS128 survey">
                 </article>
+                </a>
 
                 <!--Project 2-->
-                <article>
+                <a href="https://geophysics.org.uk/what-is-geophysics/" target="_blank" rel="noopener noreferrer">
+                <article> 
                     <container class="card">
+                        
                         <h3>
                             Geophysical Surveys
                         </h3>
@@ -93,10 +105,13 @@
                     </container>
                     <img src="./assets/images/Geophysical.jpg" alt="Data graphed from a geophysical survey">
                 </article>
+                </a>
 
                 <!--Project 3-->
+                <a href="https://www.topographical.co.uk/blog/what-is-a-topographical-land-survey" target="_blank" rel="noopener noreferrer">
                 <article>
                     <container class="card">
+                        
                         <h3>
                             Topographical Surveys
                         </h3>
@@ -105,9 +120,12 @@
                         </p>
                     </container>
                     <img src="./assets/images/Topo.jpg" alt="Use of a theodolite to collect topographical data">
+                    
                 </article>
+                </a>
 
                 <!--Project 4-->
+                <a href="https://lsbud.co.uk/linesearchbeforeudig-users/" target="_blank" rel="noopener noreferrer">
                 <article>
                     <container class="card">
                         <h3>
@@ -120,8 +138,10 @@
                     <img src="./assets/images/Deskbased.PNG"
                         alt="A typical plan from utility operators displaying their apparatus in the area">
                 </article>
+                </a>
 
                 <!--Project 5-->
+                <a href="https://www.lanesfordrains.co.uk/" target="_blank" rel="noopener noreferrer">
                 <article>
                     <container class="card">
                         <h3>
@@ -134,12 +154,14 @@
                     <img src="./assets/images/CCTV.jpg"
                         alt="Repeated drain blockages can prompt questions of the drains conditions">
                 </article>
+                </a>
             </div>
         </container>
     </main>
     <!--Contact me-->
     <container id="Contact_me">
         <ul>
+            <!--Contact me links-->
             <li><a href="mailto:Michaelworkwalters@gmail.com">Email Me</a></li>
             <li><a href="https://github.com/MichaelW1996">Github</a></li>
             <li><a href="https://www.linkedin.com/in/michaeljohnwalters/">LinkedIn</a></li>

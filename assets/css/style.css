@@ -12,7 +12,6 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-
 /*Please note, Styled Mobile first*/
 /*Hover effect text & shaddow round boxes in accent colour*/
 li:hover, article:hover{
@@ -36,7 +35,6 @@ li{
     background-color: var(--Base);
     font-size: 25px;
     padding:5px;
-    border-radius: 5px;
     font-weight: bolder;
 }
 
@@ -56,8 +54,6 @@ li{
 h2{ 
     background-color: var(--Base);
     padding: 1vh;
-    border-radius: 10px;
-    margin: 2vh;
 }
 
 /*Profile picture*/
@@ -68,13 +64,26 @@ h2{
 }
 
 /*About me section*/
-#About_me container{
+#About_me {
     display: block; /*Styling for About me paragraph*/
-    background-color: antiquewhite;
-    padding: 10px;
-    margin: 10px;
-    font-size: 150%;
+
 }
+
+/*Div styling to position About me section only*/
+#About_me > div {
+    font-size: 150%;
+    padding-left: 1%;
+    padding-right: 0.9%;
+    padding-top: 10px;
+}
+
+/*Seperate div specifically for background on text*/
+
+#About_me > div > div {
+    background-color: antiquewhite;
+    padding:5px;
+}
+
 
 #About_me p{
     text-align:unset; /*Removes default center align*/
@@ -86,7 +95,7 @@ p a::after{ /*Adds link Emoji after links in about me*/
 
 
 /*Projects*/
-article{
+#Work a{ /*Image for each project*/
     display:flex;
     height:60vh;
     flex-basis: 100%; /*Default 100% width for project to take up width of site*/
@@ -94,10 +103,18 @@ article{
     justify-content: center;
     align-items: end;
 }
-article img{ /*Image for each project*/
-    object-fit: cover;
+/*Takes up maximum size in container without overflow*/
+article{
     width:100%;
     height:100%;
+    display: flex;
+}
+
+/*fills container with image and doesnt distort*/
+article img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
 }
 
 .card{ /*text styling for projects*/
@@ -107,10 +124,16 @@ article img{ /*Image for each project*/
     padding: 0.5%;
     margin: 1%;
     font-size: 125%;
+    color: inherit;
+}
+/*Inherit colour to glow red when moused over*/
+.card h3{
+    color: inherit;
 }
 /*subheadding text reduced size in project cards*/
 .card p{
     font-size: 75%;
+    color: inherit;
 }
 
 /*Media Query for Tablets*/
@@ -122,7 +145,7 @@ article img{ /*Image for each project*/
         font-size: 150%; /*increased text size for readability*/
     }
     /*Changes to Project styling*/
-    article{
+    #Work a{
         align-items: flex-start; /*Moves cards to top of images*/
         font-size: 110%; /*text size for reability*/
     }
@@ -145,198 +168,64 @@ article img{ /*Image for each project*/
     header h1{
         background-image: none;
     }
+    /*positions job title bottom left with same width as subheadings below*/
     #Hero_banner h2{
+        flex: 0 0 20%;
         align-self: flex-end;
     }
+    /*Makes contact links run horizontally*/
     ul{
         display: flex;
-        flex-direction: row;
         justify-content: center;
+    } 
+    /*Put title on the left*/
+    #About_me{
+        display: flex;
+        justify-content: space-between;
     }
-
+    /*Matches title size to Job title*/
+    #About_me h2{
+        flex: 0 0 20%;
+        height: fit-content;
+    }
+    /*sets flex properties for divider with all project cards within*/
    #Work div{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-
     }
-    .projects article{
+    /*Propeties for each individual project card*/
+    #Work a{
         align-items: flex-start;
         justify-content: space-between;
         font-size: 100%;
         flex-shrink: 0.5;
-        flex-wrap: wrap;
         flex-basis: 47%
     }
-    article:nth-of-type(1){
+    /*Makes first item twice the width on desktop*/
+    #Work a:nth-of-type(1){
         flex-basis: 98%
     }
-    #About_me{
-        display: flex;
-    }
-    #About_me h2{
-        display: flex;
-        width:20vw;
-        height: fit-content;
-        border-right: solid black 1px;
-    }
-
+    
+    /*Puts Work title on left side*/
     #Work{
         display: flex;
     }
     
+    /*Matches work title size to job title*/
     #Work h2{
-        display: flex;
-        width: 20vw;
+        flex: 0 0 20%;
         height:fit-content;
-        border-right: solid black 1px;
     }
+
+    /*adds top border to contact links container*/
     #Contact_me ul{
         border-top: solid black 1px;
         border-radius: 0;
-        margin-top: 10px;
     }
-    .projects{
+    /*adds border between titles and content in work and about me*/
+    .RightBorder{
         border-left: solid black 1px;
         border-radius: 0;
     }
 }
-
-/* old code
-#Hero_banner img{
-    align-self: center;
-    right:auto;
-}
-
-/*
-header{
-    background-image: var(--lingrad);
-    display: flex;
-}
-
-header h1{
-    font-size: 35px;
-    margin: 10px;
-    color:var(--text)
-}
-
-header ul{
-    position:absolute;
-    right:15px;
-    align-items: center;
-}
-
-li {
-    display: inline;
-    background-color: var(--Base);
-    color: var(--text);
-    font-size: 25px;
-    padding:5px;
-    border-radius: 5px;
-    margin: 10px;
-    align-items: center;
-    font-weight: bolder;
-}
-
-li a {
-    text-decoration: none;
-    color: inherit;
-}
-
-#article1{
-    display: flex;
-    width:80vw;
-    height:60vh;
-}
-
-#Hero_banner{
-    display: flex;
-    
-    background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(../images/Heroimage.jpg);
-  
-    
-    height: 50vh;
-    width: 100%;
-  
-    
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    align-items: center;
-}
-
-#Hero_banner h2{
-    font-size: 5vh;
-    color: var(--Base);
-    margin: 10px;
-
-}
-
-#Hero_banner img{
-    display: flex;
-    position: absolute;
-    right: 10px;
-    height: 40vh;
-    border-radius: 50%;
-}
-
-
-
-
-#Contact_me{
-    display: flex;
-    background-image: var(--lingrad);
-    align-items: center;
-    justify-content: center;
-}
-#Work{
-    display: flex;
-}
-
-#Work h2{
-    width: 20vw;
-    border-right: solid black 1px;
-}
-
-.projects{
-    display: flex;
-    flex-wrap: wrap;
-    width:100%;
-}
-
-article{
-    display:flex;
-    width:39vw;
-    height:39vh;
-    background-color: aqua;
-    margin:1vw;
-}
-
-.card{
-    position: absolute;
-    float: left;
-    background-color: var(--Base);
-    line-height: 0.5;
-    padding: 1%;
-    margin: 1%
-}
-
-.card p{
-    font-size: small;
-}
-
-
-
-article img{
-    display: flex;
-    object-fit: cover;
-    width:100%;
-    height:100%;
-}
-
-
-*/
-
-
-
